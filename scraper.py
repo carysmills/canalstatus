@@ -22,7 +22,7 @@ def checkCanal():
 
 	datetime = (time.strftime("%d/%m/%Y %H:%M:%S"))
 
-	with open('canaldata.csv', 'a') as csvfile:
+	with open('/var/www/canalstatus/canalstatus/canaldata.csv', 'a') as csvfile:
 		csvwriter = csv.writer(csvfile, delimiter="|")
 		csvwriter.writerow([ready, infoformatted, datetime])
 
