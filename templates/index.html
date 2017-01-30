@@ -2,24 +2,28 @@
 <html lang="en">
  
 <head>
-    <title>Python Flask Bucket List App</title>
+    <title>isthecanalopen.com</title>
  
- 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
- 
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
-    {% if name %}
-      <h1>Hello {{ name }}!</h1>
-    {% else %}
-      <h1>Hello, World!</h1>
-    {% endif %}
- 
+ 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
  
 </head>
  
 <body>
- 
+
+	<div id="container">
+	
+		<h1 id="status">The Rideau Canal is {{ ready }}!</h1>
+		
+		<img class="icon" src="static/sticks.png" alt="Icon of crossed hockey sticks.">
+
+		<p id="updatesIntro" class="updates">The latest from the National Capital Commision is:</p>
+		<p id="updatesDetails" class="updates"> {{ infoformatted}}.</p>
+	</div>
+
+	<footer>
+		<p id="datetime">This information was fetched on {{ datetime }} Coordinated Universal Time.</p>
+	</footer>
 
 </body>
  

@@ -10,11 +10,11 @@ def main():
 		for row in csvcontent:
 			continue
 
-	# return '%s %s' % (row[0], row[1])
+	ready = row[0].lower()
+	infoformatted = row[1] 
+	datetime = row[2]
 
-	info = row[0]
-
-	return render_template('index.html', name=info)
+	return render_template('index.html', ready=ready, infoformatted=infoformatted, datetime=datetime)
 
 if __name__ == '__main__':
 	app.run(debug=True)
