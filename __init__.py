@@ -17,4 +17,4 @@ def main():
 	return render_template('index.html', ready=ready, infoformatted=infoformatted, datetime=datetime)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
