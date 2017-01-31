@@ -2,7 +2,7 @@
 <html lang="en">
  
 <head>
-    <title>Is the canal open?</title>
+    <title>Is The Canal Open?</title>
  
  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
@@ -14,17 +14,31 @@
 	<div id="container">
 
 		<h1 id="status">The Rideau Canal is {{ ready }}!</h1>
-		
-		<img class="icon" src="static/sticks.png" alt="Icon of crossed hockey sticks.">
 
-		<p id="updatesIntro" class="updates">The latest from the National Capital Commision is:</p>
+		 {% if ready == "closed" %}
+		 	<img class="icon" src="static/sticks.png" alt="Icon of crossed hockey sticks.">
+			
+		 {% else %} 
+		 	<img class="icon" src="static/skate.png" alt="Icon of crossed hockey sticks.">
+
+		 {% endif %}
+
+		<p id="updatesIntro" class="updates">The latest from the <a href="http://rcs.ncc-ccn.ca">National Capital Commission is:</a></p>
 		<p id="updatesDetails" class="updates"> {{ infoformatted}}.</p>
 
 	</div>
 
-	<footer>
+	<footer class="clearfix">
 		<p id="datetime">This information was fetched on {{ datetime }} Coordinated Universal Time.</p>
+		<p id="credit">Made by <a target="_blank" href="http://www.carysmills.com">Carys Mills</a></p>
 	</footer>
+
+<!-- 	Noun Project credits:
+	Hockey Stick
+	By Valery, RU
+
+	Figure Skating
+	By Evgeni Moryakov, RU -->
 
 </body>
  
