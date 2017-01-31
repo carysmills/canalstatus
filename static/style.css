@@ -11,10 +11,11 @@
 
 body {
 	background: #E6E6EA;
+	font-size: 18px;
 }
 
 #container {
-	min-height: calc(100vh - 75px);
+	min-height: calc(100vh - 95px);
 	max-width: 800px;
 	display: block;
 	margin: 0 auto;
@@ -23,7 +24,7 @@ body {
 #status {
 	font-family: 'Pacifico', serif;
 	color: #fff;
-	font-size: 50px;
+	font-size: 60px;
 	font-weight: lighter;
 	background: #009FB7;
 	box-shadow: 4px 4px 2px #777777;
@@ -44,14 +45,12 @@ body {
 #datetime {
 	font-family: 'Open Sans', sans-serif;
 	color: #FE4A49;
-	font-size: 12px;
 	float: left;
 }
 
 #credit {
 	font-family: 'Open Sans', sans-serif;
 	color: #FE4A49;
-	font-size: 12px;
 	float: right;
 }
 
@@ -67,7 +66,7 @@ footer {
 #updatesDetails {
 	background: rgba(255,255,255,0.5);
 	padding: 10px;
-	margin: 10px;
+	margin: 30px 10px 10px 10px;
 }
 
 .icon {
