@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def main():
 
-	with open('/var/www/canalstatus/canalstatus/canaldata.csv', 'r') as csvfile:
+	with open('canaldata.csv', 'r') as csvfile:
 		csvcontent = csv.reader(csvfile, delimiter='|')
 		for row in csvcontent:
 			continue
