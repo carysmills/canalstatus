@@ -26,4 +26,5 @@ def checkCanal():
 		csvwriter = csv.writer(csvfile, delimiter="|")
 		csvwriter.writerow([ready, infoformatted, datetime])
 
+
 checkCanal();	
