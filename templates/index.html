@@ -6,18 +6,28 @@
  	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
-    <meta property="og:url" content="isthecanalopen.com"/>
+    <meta property="og:url" content="http://isthecanalopen.com"/>
     <meta property="og:title" content="The Rideau Canal is {{ ready }}!" />
     <meta property="og:description" content="Recent canal status updates from the National Capital Commission." />
     <meta property="og:image" content="static/social.jpg" /> 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@CarysMills" />
     <meta name="twitter:title" content="The Rideau Canal is {{ ready }}!" />
-    <meta name="twitter:description" content="Recent updates from the National Capital Commission." />
+    <meta name="twitter:description" content="Recent canal status updates from the National Capital Commission." />
     <meta name="twitter:image" content="http://isthecanalopen.com/static/social.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
  
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 	<div id="container">
 
@@ -31,13 +41,21 @@
 
 		 {% endif %}
 
-		<p id="updatesIntro" class="updates">The <a href="http://rcs.ncc-ccn.ca">National Capital Commission says:</a></p>
+		<p id="updatesIntro" class="updates">The <a href="http://rcs.ncc-ccn.ca">National Capital Commission</a>says:</p>
 		<p id="updatesDetails" class="updates"> {{ infoformatted}}.</p>
+
+		<div id="social" class="clearfix">
+			<a class="twitter-share-button"
+			  href="https://twitter.com/intent/tweet?text=The%20Rideau%20Canal%20is%20{{ ready }} for skating! Get updates on the canal's status">Tweet</a>
+
+			  <div class="fb-share-button" data-href="http://isthecanalopen.com" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisthecanalopen.com%2F&amp;src=sdkpreparse">Share</a></div>
+			 </div>
+		 </div>
 
 	</div>
 
 	<footer class="clearfix">
-		<p id="datetime">This information was fetched on {{ datetime }} Coordinated Universal Time.</p>
+		<p id="datetime">This information was fetched from the National Capital Commision website on {{ datetime }} Coordinated Universal Time. For the most recent information, check their site.</p>
 		<p id="credit">Made by <a target="_blank" href="http://www.carysmills.com">Carys Mills</a></p>
 	</footer>
 
@@ -58,6 +76,23 @@
 	  ga('send', 'pageview');
 
 	</script>
+
+	<script>window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+	    t = window.twttr || {};
+	  if (d.getElementById(id)) return t;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+
+	  t._e = [];
+	  t.ready = function(f) {
+	    t._e.push(f);
+	  };
+
+	  return t;
+	}(document, "script", "twitter-wjs"));</script>
 
 </body>
  

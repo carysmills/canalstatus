@@ -46,12 +46,14 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	color: #FE4A49;
 	float: left;
+	max-width: 80%;
 }
 
 #credit {
 	font-family: 'Open Sans', sans-serif;
 	color: #FE4A49;
 	float: right;
+	max-width: 20%;
 }
 
 footer {
@@ -85,4 +87,28 @@ a {
 
 a:hover {
 	background: rgba(0,159,183,0.6);
+}
+
+#social {
+	display: block;
+	width: 175px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#social a, #social div {
+	float: right;
+}
+
+#twitter-widget-0 {
+	margin-top: 2px;
+}
+
+@media (max-width: 670px) {
+	#datetime, #credit {
+		float: none;
+		text-align: center;
+		max-width: 100%;
+	}
+
 }
