@@ -46,19 +46,22 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	color: #FE4A49;
 	float: left;
-	max-width: 80%;
+	max-width: calc(50% - 10px);
+	margin: 0 0 0 10px;
 }
 
 #credit {
 	font-family: 'Open Sans', sans-serif;
 	color: #FE4A49;
 	float: right;
-	max-width: 20%;
+	max-width: calc(50% - 10px);
+	margin: 0 10px 0 0;
 }
 
 footer {
-	margin-top: 20px;
+	margin-top: 40px;
 	height: 20px;
+	font-size: 14px;
 }
 
 #updatesIntro {
@@ -91,13 +94,15 @@ a:hover {
 
 #social {
 	display: block;
-	width: 175px;
+	width: 200px;
 	margin: 0 auto;
 	text-align: center;
 }
 
 #social a, #social div {
-	float: right;
+	float: none;
+	display: block;
+	margin: 0 auto;
 }
 
 #twitter-widget-0 {
@@ -105,10 +110,18 @@ a:hover {
 }
 
 @media (max-width: 670px) {
+
+	#status {
+		font-size: 40px;
+	}
+	.icon {
+		height: 150px;
+	}
 	#datetime, #credit {
 		float: none;
 		text-align: center;
 		max-width: 100%;
+		margin: 0 0 0 0;
 	}
 
 }
