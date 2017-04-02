@@ -4,7 +4,7 @@
 <head>
     <title>Is The Canal Open?</title>
  	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
- 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Pacifico" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CPacifico" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
     <meta property="og:url" content="http://isthecanalopen.com"/>
     <meta property="og:title" content="The Rideau Canal is {{ ready }}!" />
@@ -46,7 +46,7 @@
 
 		<div id="social" class="clearfix">
 			<a class="twitter-share-button"
-			  href="https://twitter.com/intent/tweet?text=The%20Rideau%20Canal%20is%20{{ ready }} for skating!">Tweet</a>
+			  href="https://twitter.com/intent/tweet?text=The%20Rideau%20Canal%20is%20{{ ready.decode('utf-8') }}%20for%20skating!">Tweet</a>
 
 			  <div class="fb-share-button" data-href="http://isthecanalopen.com" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisthecanalopen.com%2F&amp;src=sdkpreparse">Share</a></div>
 			 </div>
