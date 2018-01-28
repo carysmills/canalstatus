@@ -1,28 +1,24 @@
-# import libraries
 from bs4 import BeautifulSoup  
 import sched, time
 import csv
 from splinter import Browser
+import urllib2
 
 def checkCanal():
-	with Browser("phantomjs") as browser:
-	    browser.driver.set_window_size(1280, 1024)
-	    browser.visit("http://rcs.ncc-ccn.ca")
-	    button = browser.find_by_css(".feature-conditions")
-	    button.click()
-	    html = browser.html
+	quote_page = "http://ncc-ccn.gc.ca/places-to-visit/rideau-canal-skateway/"
+	page = urllib2.urlopen(quote_page)
 
-    # find the right info
-	soup = BeautifulSoup(html)
-	conditions = soup.find("div", class_="conditions-status")
-	status = conditions.find("div", class_="content")
-	ready = status.find("h4").text
-	info = status.find("p", class_="rcs-general-notice").text
-	infoformatted = info.encode('ascii', 'ignore')
+	ready = "false"
+
+	soup = BeautifulSoup(page)
+	conditions = soup.find("div", attrs={"class": "card-content"})
+	status = conditions.find("p").text
+	infoformatted = status.encode('ascii', 'ignore')
+	print infoformatted
 
 	datetime = (time.strftime("%d/%m/%Y %H:%M:%S"))
 
-	with open('/var/www/canalstatus/canalstatus/canaldata.csv', 'a') as csvfile:
+	with open('canaldata.csv', 'a') as csvfile:
 		csvwriter = csv.writer(csvfile, delimiter="|")
 		csvwriter.writerow([ready, infoformatted, datetime])
 
