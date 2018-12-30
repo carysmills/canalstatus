@@ -6,9 +6,7 @@ from splinter import Browser
 def checkCanal():
 	with Browser("phantomjs") as browser:
 	    browser.driver.set_window_size(1280, 1024)
-	    browser.visit("http://rcs.ncc-ccn.ca")
-	    button = browser.find_by_css(".feature-conditions")
-	    button.click()
+	    browser.visit("http://ncc-ccn.gc.ca/rideau-canal-skateway")
 	    html = browser.html
 
         soup = BeautifulSoup(html)
